@@ -36,9 +36,8 @@ Begin by changing the privilege level of execution using the appropriate CSRs (`
 
 Set up the page table entries in memory, following the **Sv39** hierarchical format. Ensure proper alignment and permission bits are configured based on the desired mappings.
 
-📌 **Insert Page Table Structure Here:**
 
-![Page Table Structure - Sv39](URL_TO_SV39_PAGE_TABLE_IMAGE)
+![Page Table Structure - Sv39](Page Table Structure.png)
 
 ---
 
@@ -61,13 +60,12 @@ After configuring the page table and `satp`, switch the privilege level to **Use
 
 Check the memory dumps or Spike logs to confirm that physical addresses are being replaced with their corresponding virtual addresses — indicating successful paging.
 
-📌 **Insert Physical Address Screenshot Here:**
 
-![Address Translation Output](URL_TO_PHYSICAL_ADDRESS_IMAGE)
+![Address Translation Output](Physical Address View.png)
 
 ---
 
-## 📚 Key Concepts Practiced
+##  Key Concepts Practiced
 
 - RISC-V privilege modes: M-mode, S-mode, U-mode
 - CSR manipulation (`mstatus`, `satp`, `mepc`, etc.)
@@ -77,23 +75,21 @@ Check the memory dumps or Spike logs to confirm that physical addresses are bein
 
 ---
 
-##  File Structure
-
-├── main.S # RISC-V assembly file
-├── Makefile # Build file (for Spike or QEMU)
-├── dump.log # Output dump from Spike
-├── README.md # This file
----
-
 ##  Tools Used
 
 - [Spike](https://github.com/riscv-software-src/riscv-isa-sim)
 
 ---
+## How To Compile and Create dump file
+
+- riscv64-unknown-elf-gcc -nostartfiles -T linker.ld va_template.S
+- riscv64-unknown-elf-objdump -D a.out > dump
+ 
+---
 
 ##  Author
 
-R.Meghana — 3rd Year B.Tech CSE, IIT Madras  
+R. Meghana — 3rd Year B.Tech CSE, IIT Madras  
 This project was done as part of coursework on RISC-V architecture and memory management.
 
 ---
