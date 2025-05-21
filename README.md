@@ -37,7 +37,7 @@ Begin by changing the privilege level of execution using the appropriate CSRs (`
 Set up the page table entries in memory, following the **Sv39** hierarchical format. Ensure proper alignment and permission bits are configured based on the desired mappings.
 
 
-![Page Table Structure - Sv39](Page Table Structure.png)
+![Page Table Structure - Sv39](page_table_structure.png)
 
 ---
 
@@ -61,7 +61,7 @@ After configuring the page table and `satp`, switch the privilege level to **Use
 Check the memory dumps or Spike logs to confirm that physical addresses are being replaced with their corresponding virtual addresses — indicating successful paging.
 
 
-![Address Translation Output](Physical Address View.png)
+![Address Translation Output](physical_address_view.png)
 
 ---
 
