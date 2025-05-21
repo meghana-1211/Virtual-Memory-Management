@@ -80,7 +80,7 @@ Check the memory dumps or Spike logs to confirm that physical addresses are bein
 - [Spike](https://github.com/riscv-software-src/riscv-isa-sim)
 
 ---
-## How To Compile and Create dump file
+## To Compile and Create dump file
 
 - riscv64-unknown-elf-gcc -nostartfiles -T linker.ld va_template.S
 - riscv64-unknown-elf-objdump -D a.out > dump
