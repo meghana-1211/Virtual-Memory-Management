@@ -1,4 +1,4 @@
-# 🧠 Virtual Memory Management in RISC-V (Sv39)
+#  Virtual Memory Management in RISC-V (Sv39)
 
 This project explores **virtual memory** in the **RISC-V architecture**, focusing on how paging and memory isolation are handled using **hierarchical page tables** and the **SATP** mechanism.
 
@@ -10,7 +10,7 @@ The assignment gives hands-on experience with:
 
 ---
 
-## 🚀 Problem Overview
+##  Problem Overview
 
 Modern computer systems use virtual memory to efficiently manage physical memory and isolate processes. RISC-V supports this using **Sv39 paging**, a hierarchical page table scheme that allows for 39-bit virtual addressing.
 
@@ -24,15 +24,15 @@ In this assignment, we simulate virtual memory behavior by:
 
 ---
 
-## 🛠️ Steps Involved
+##  Steps Involved
 
-### ✅ Step 1: Switch from Machine Mode to Supervisor Mode
+###  Step 1: Switch from Machine Mode to Supervisor Mode
 
 Begin by changing the privilege level of execution using the appropriate CSRs (`mstatus`, `mepc`, etc.).
 
 ---
 
-### ✅ Step 2: Initialize the Page Table
+###  Step 2: Initialize the Page Table
 
 Set up the page table entries in memory, following the **Sv39** hierarchical format. Ensure proper alignment and permission bits are configured based on the desired mappings.
 
@@ -42,7 +42,7 @@ Set up the page table entries in memory, following the **Sv39** hierarchical for
 
 ---
 
-### ✅ Step 3: Configure the SATP Register
+###  Step 3: Configure the SATP Register
 
 Write the appropriate configuration into the `satp` register:
 - Set mode to Sv39
@@ -51,13 +51,13 @@ Write the appropriate configuration into the `satp` register:
 
 ---
 
-### ✅ Step 4: Switch to User Mode
+###  Step 4: Switch to User Mode
 
 After configuring the page table and `satp`, switch the privilege level to **User Mode** and start execution.
 
 ---
 
-### ✅ Step 5: Observe Address Translation
+###  Step 5: Observe Address Translation
 
 Check the memory dumps or Spike logs to confirm that physical addresses are being replaced with their corresponding virtual addresses — indicating successful paging.
 
@@ -77,7 +77,7 @@ Check the memory dumps or Spike logs to confirm that physical addresses are bein
 
 ---
 
-## 🖼️ File Structure
+##  File Structure
 
 ├── main.S # RISC-V assembly file
 ├── Makefile # Build file (for Spike or QEMU)
@@ -85,32 +85,16 @@ Check the memory dumps or Spike logs to confirm that physical addresses are bein
 ├── README.md # This file
 ---
 
-## 📌 Notes
-
-- Ensure all memory structures (page tables, stack, etc.) are properly aligned.
-- Use `spike` and `pk` or `qemu-riscv64` to test your program.
-- Debug using `--dump-dts` or log outputs from memory dumps.
-
----
-
-## 🧪 Tools Used
+##  Tools Used
 
 - [Spike](https://github.com/riscv-software-src/riscv-isa-sim)
-- [RARS (for initial testing)](https://github.com/TheThirdOne/rars)
-- QEMU (for simulating full environment)
 
 ---
 
-## ✍️ Author
+##  Author
 
-Your Name — 3rd Year B.Tech CSE, IIT Madras  
+R.Meghana — 3rd Year B.Tech CSE, IIT Madras  
 This project was done as part of coursework on RISC-V architecture and memory management.
 
 ---
 
-## 📷 Screenshots
-
-- ✅ Page Table Structure (Sv39)
-- ✅ Physical Address View (Post Translation)
-
----
